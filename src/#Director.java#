@@ -1,0 +1,4 @@
+class Director {                // режисер
+    String name;
+    String surn
+}
