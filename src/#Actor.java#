@@ -9,6 +9,6 @@ class Actor extends Person {                   // актер
     }
 
     private int getHeight() {
-        
+        return height;
     }
 }

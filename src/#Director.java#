@@ -1,4 +1,16 @@
-class Director {                // режисер
-    String name;
-    String surn
+class Director extends Person {                // режисер
+    //String name;
+    //String surname;
+    //Gender gender;
+    private int numberOfShows;
+
+    Director(Person person, int numberOfShows) {
+        super(person.getName(), person.getSurName(),person.getGender());
+        this.numberOfShows = numberOfShows;
+    }
+
+    public int getNumberOfShows() {
+        return numberOfShows;
+    }
+    
 }

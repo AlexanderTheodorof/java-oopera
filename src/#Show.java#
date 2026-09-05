@@ -1,0 +1,10 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+class Show {                    // спектакль
+    String           title;
+    int              duration;
+    Director         director;
+    //ArrayList<Actor> actorsList;
+    HashMap<String,Actor> actorList;
+}
