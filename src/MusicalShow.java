@@ -1,11 +1,13 @@
-
+import java.util.ArrayList;
 
 class MusicalShow extends Show {
     protected String musicAuthor;
-    protected String librettoText;
+    protected ArrayList<String> librettoText;
     
-    MusicalShow(Show show, String musicAuthor, String librettoText) {
-        super(show.getTitle(), show.getDuration(), show.getDirector(), show.getActorList());
+    MusicalShow(Show show,
+                String musicAuthor,
+                ArrayList<String> librettoText) {
+        super(show.title, show.duration, show.director, show.actorList);
         this.musicAuthor  = musicAuthor;
         this.librettoText = librettoText;
     }
@@ -14,11 +16,13 @@ class MusicalShow extends Show {
         return musicAuthor;
     }
 
-    public String getLibrettoText() {
+    public ArrayList<String> getLibrettoText() {
         return librettoText; 
     }
 
     public void printLibrettoText() {
-        System.out.println(librettoText);
+        for (String sentence : librettoText) {
+            System.out.println(sentence);
+        }
     }
 }

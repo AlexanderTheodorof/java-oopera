@@ -15,7 +15,10 @@ public class Main {
         
         HashMap<String, Actor> actorList = new HashMap<>();
         
-        Show show = new Show("Юнона и Авось", 120, director, actorList);
+        Show show = new Show("Фауст", 120, director, actorList);
+        Libretto libretto = new Libretto();
+        MusicalShow musicalShow = new MusicalShow(show,"Шарль Гуно", libretto.getLibrettoText());
+        
         
         //System.out.println(director);
         
@@ -29,6 +32,7 @@ public class Main {
         System.out.println(actor1.equals(actor1));
         System.out.println(actor1.hashCode());
         System.out.println(actor2.hashCode());
+        musicalShow.printLibrettoText();
         
     }
 }
