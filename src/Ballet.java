@@ -1,8 +1,10 @@
 class Ballet extends MusicalShow {
     Person choreographer;
 
-    Ballet(Show show, MusicalShow musicalShow, Person choreographer) {
-        super(show, musicalShow.getMusicAuthor(), musicalShow.getLibrettoText);
+    Ballet(MusicalShow musicalShow, Person choreographer) {
+        super(new Show(musicalShow.title, musicalShow.duration, musicalShow.director, musicalShow.actorList),
+              musicalShow.musicAuthor,
+              musicalShow.librettoText);
         this.choreographer = choreographer; 
     }
 

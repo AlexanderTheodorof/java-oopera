@@ -1,5 +1,0 @@
-class Opera extends MsicalShow {
-    int choirSize;
-
-    
-}

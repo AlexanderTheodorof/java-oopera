@@ -3,17 +3,33 @@ class Person {
     protected String surname;
     protected Gender gender;
 
-    Person(String name, String surname, Gender gender) {
-        this.name    = name;
-        this.surname = surname;
+    // конструктор, упрощающий пользовательский ввод имени и фамилии
+    Person(String fullName, Gender gender) { 
+        String[] parts = fullName.split(" ");
+        this.name = parts[0];
+        this.surname = parts[1];
         this.gender  = gender;
     }
 
-    public String getName(){
-        return name;
+    // конструктор, упрощающий процедурный ввод
+    Person(String name, String surname, Gender gender){
+        this.name    = name;
+        this.surname = surname;
+        this.gender  = gender; 
+    }
+    
+    public Gender getGender() {
+        return gender;
     }
 
-    public String getSurname() {
-        return surname; 
+    @Override
+    public String toString() {
+        String objectDescription =
+            "Person{"
+            + "name='"    + name    + "',"
+            + "surname='" + surname + "',"
+            + "gender="   + gender
+            + "}";
+        return objectDescription; 
     }
 }
