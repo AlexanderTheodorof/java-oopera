@@ -1,8 +1,8 @@
 class Opera extends MusicalShow {
-    int choirSize;
+    private final int choirSize;
 
     Opera(MusicalShow musicalShow, int choirSize) {
-        super(new Show(musicalShow.title, musicalShow.duration, musicalShow.director, musicalShow.actorList),
+        super(new Show(musicalShow.title, musicalShow.duration, musicalShow.director),
               musicalShow.getMusicAuthor(),
               musicalShow.getLibrettoText());
         this.choirSize = choirSize; 
@@ -10,5 +10,18 @@ class Opera extends MusicalShow {
 
     public int getChoirSize() {
         return choirSize;
+    }
+
+    @Override
+    public String toString() {
+        String objectDescription =
+              "_".repeat(20)
+            + "\nОпера '" + title + "'"
+            + "\nПродолжительность:" + duration + "\n"
+            + "\nВ постановке участвуют:\n" 
+            + director + "\n"
+            + "Хор в составе " + choirSize + " человек\n"
+            + actorListToString();
+        return objectDescription;
     }
 }

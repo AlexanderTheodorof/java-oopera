@@ -4,8 +4,9 @@ class Person {
     protected Gender gender;
 
     // конструктор, упрощающий пользовательский ввод имени и фамилии
-    Person(String fullName, Gender gender) { 
+    Person(String fullName, Gender gender) {
         String[] parts = fullName.split(" ");
+
         this.name = parts[0];
         this.surname = parts[1];
         this.gender  = gender;
@@ -17,9 +18,20 @@ class Person {
         this.surname = surname;
         this.gender  = gender; 
     }
+
+        public String getName() {
+        return name; 
+    }
+    public String getSurname(){
+        return surname; 
+    }
     
     public Gender getGender() {
         return gender;
+    }
+
+    public String getFullName() {
+        return name + " " + surname;
     }
 
     @Override
