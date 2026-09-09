@@ -34,11 +34,11 @@ public class Theatre {
 
         opera.printActorList();
 
-        ballet.replacementOfActor("Дмитриевский", actor1);
+        ballet.replacementOfActor("Дмитриевский", actor1); // замена актера 
 
         ballet.printActorList();
 
-        opera.replacementOfActor("Гагарин", actor2);
+        opera.replacementOfActor("Гагарин", actor2); // попытка замены не участвующего в постановке актера 
         opera.printActorList();
 
         ballet.printLibrettoText();
