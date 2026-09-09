@@ -6,7 +6,7 @@ public class Theatre {
         Actor actor2 = new Actor(new Person("Иван Дмитриевский", Gender.MALE), 184);
         Actor actor3 = new Actor(new Person("Софья Гославская", Gender.FEMALE),165); 
 
-        Director dyagilev = new Director(new Person("Сергей Дягилев", Gender.MALE),74);
+        Director dyagilev  = new Director(new Person("Сергей Дягилев", Gender.MALE),74);
         Director meyerhold = new Director(new Person("Всеволод Мейерхольд ", Gender.MALE), 56);
         
         Person choreographer = new Person("Вацлав Нижинский", Gender.MALE);
