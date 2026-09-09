@@ -13,6 +13,14 @@ class Ballet extends MusicalShow {
     }
 
     @Override
+    public void printActorList() {
+        System.out.println("_".repeat(20));
+        System.out.println("В балете '" + title + "' участвуют актеры:"); 
+        System.out.println(actorListToString());
+        System.out.println("_".repeat(20));
+    }
+    
+    @Override
     public String toString() {
         String objectDescription =
               "_".repeat(20)

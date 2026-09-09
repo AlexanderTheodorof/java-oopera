@@ -1,4 +1,4 @@
-class Director extends Person {                // режисер
+class Director extends Person {
 
     private int numberOfShows;
 

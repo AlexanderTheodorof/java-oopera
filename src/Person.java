@@ -19,9 +19,10 @@ class Person {
         this.gender  = gender; 
     }
 
-        public String getName() {
+    public String getName() {
         return name; 
     }
+    
     public String getSurname(){
         return surname; 
     }
@@ -36,6 +37,7 @@ class Person {
 
     @Override
     public String toString() {
+        // переопредление метода toString согласно контракту. В этой программе переопределение согласно контракту целесообразно сделать только здесь :) 
         String objectDescription =
             "Person{"
             + "name='"    + name    + "',"

@@ -1,6 +1,6 @@
 import java.util.Objects;
 
-class Actor extends Person {                   // актер
+class Actor extends Person {
     //String name;
     //String surname;
     //Gender gender;

@@ -1,4 +1,4 @@
-class Opera extends MusicalShow {
+public class Opera extends MusicalShow {
     private final int choirSize;
 
     Opera(MusicalShow musicalShow, int choirSize) {
@@ -12,6 +12,15 @@ class Opera extends MusicalShow {
         return choirSize;
     }
 
+    @Override
+    public void printActorList() {
+        System.out.println("_".repeat(20));
+        System.out.println("В опере '" + title + "' участвуют актеры:"); 
+        System.out.println(actorListToString());
+        System.out.println("_".repeat(20));
+    }
+
+    
     @Override
     public String toString() {
         String objectDescription =

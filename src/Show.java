@@ -1,12 +1,10 @@
-import java.util.ArrayList;
 import java.util.HashMap;
 
-class Show {                    // спектакль
+class Show  {
     protected String                    title;
     protected int                    duration;
     protected Director               director;
-    //ArrayList<Actor> actorsList;
-    protected static final HashMap<String,Actor> actorList = new HashMap<>();
+    protected final HashMap<String,Actor> actorList = new HashMap<>();
 
     Show(String title, int duration, Director director) {
         this.title     = title;
@@ -42,7 +40,6 @@ class Show {                    // спектакль
         if (actorList.size() == 0) {
             result += "Это постмодернистская постановка, в которой зрители сами представляют актеров.";
         } else {
-            result += "Актеры:";
             for (Actor actor : actorList.values()) {
                 result += "\n" + actor;
             }
@@ -52,13 +49,14 @@ class Show {                    // спектакль
     }
     public void printActorList() {
         System.out.println("_".repeat(20));
+        System.out.println("В спектакле '" + title + "' участвуют актеры:"); 
         System.out.println(actorListToString());
         System.out.println("_".repeat(20));
     }
 
     public void addNewActor(Actor actor) {
         if (actorList.containsValue(actor)) {
-            System.out.println("Актер " + actor + " уже участвует в спектакле " + title);
+            System.out.println("Актер " + actor + " уже участвует в постановке " + title);
         } else {
             actorList.put(actor.getSurname(), actor);
         }
@@ -67,11 +65,11 @@ class Show {                    // спектакль
     public void replacementOfActor(String surname, Actor actor) {
         System.out.println("~".repeat(20));
         if (actorList.containsKey(surname)) {
-            System.out.println("Актер " + actorList.get(surname) + " был заменен на " + actor);
+            System.out.println("Актер " + actorList.get(surname) + "в постановке '" + title + "' был заменен на " + actor);
             actorList.remove(surname);
             actorList.put(actor.getSurname(), actor);
         } else {
-            System.out.println("Актера с фамилией " + surname + " нет в списке. Заменить его не получится (︶︹︺)");
+            System.out.println("Актера с фамилией " + surname + " нет в списке постановки '" + title +  "' . Заменить его не получится (︶︹︺)");
         }
         System.out.println("~".repeat(20));
     }
