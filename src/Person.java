@@ -37,13 +37,8 @@ class Person {
 
     @Override
     public String toString() {
-        // переопредление метода toString согласно контракту. В этой программе переопределение согласно контракту целесообразно сделать только здесь :) 
         String objectDescription =
-            "Person{"
-            + "name='"    + name    + "',"
-            + "surname='" + surname + "',"
-            + "gender="   + gender
-            + "}";
+            name + " " + surname;
         return objectDescription; 
     }
 }

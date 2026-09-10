@@ -15,7 +15,7 @@ class Actor extends Person {
         
     @Override
     public String toString() {
-        String objectDescription = String.format("%s %s(%d)", name, surname, height);
+        String objectDescription = super.toString() + "(" + height + ")"; 
         return objectDescription; 
     }
 
