@@ -1,9 +1,6 @@
 import java.util.Objects;
 
 class Actor extends Person {
-    //String name;
-    //String surname;
-    //Gender gender;
     private int   height;
 
     Actor(Person person, int height) {
