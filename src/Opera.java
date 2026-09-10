@@ -5,7 +5,8 @@ public class Opera extends MusicalShow {
         super(new Show(musicalShow.title, musicalShow.duration, musicalShow.director),
               musicalShow.getMusicAuthor(),
               musicalShow.getLibrettoText());
-        this.choirSize = choirSize; 
+        this.choirSize = choirSize;
+        type = "Опера"; 
     }
 
     public int getChoirSize() {

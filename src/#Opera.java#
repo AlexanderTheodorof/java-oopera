@@ -1,35 +1,36 @@
-class Ballet extends MusicalShow {
-    private final Person choreographer;
+public class Opera extends MusicalShow {
+    private final int choirSize;
 
-    Ballet(MusicalShow musicalShow, Person choreographer) {
+    Opera(MusicalShow musicalShow, int choirSize) {
         super(new Show(musicalShow.title, musicalShow.duration, musicalShow.director),
-              musicalShow.musicAuthor,
-              musicalShow.librettoText);
-        this.choreographer = choreographer;
-        type = "балете";
+              musicalShow.getMusicAuthor(),
+              musicalShow.getLibrettoText());
+        this.choirSize = choirSize;
+        type = "опере"; 
     }
 
-    public Person getChoreographer() {
-        return choreographer; 
+    public int getChoirSize() {
+        return choirSize;
     }
 
     @Override
     public void printActorList() {
         System.out.println("_".repeat(20));
-        System.out.println("В балете '" + title + "' участвуют актеры:"); 
+        System.out.println("В опере '" + title + "' участвуют актеры:"); 
         System.out.println(actorListToString());
         System.out.println("_".repeat(20));
     }
+
     
     @Override
     public String toString() {
         String objectDescription =
               "_".repeat(20)
-            + "\nБаллет '" + title + "'"
+            + "\nОпера '" + title + "'"
             + "\nПродолжительность:" + duration + "\n"
             + "\nВ постановке участвуют:\n" 
             + director + "\n"
-            + "Хореограф: " + choreographer.getFullName()  + "\n"
+            + "Хор в составе " + choirSize + " человек\n"
             + actorListToString();
         return objectDescription;
     }
