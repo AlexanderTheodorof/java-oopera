@@ -29,15 +29,15 @@ class Namesakes {
             boolean isActorContains = surname.equals(actorFromList.surname);
             
             if (isActorContains) {
-                namesakes.add(actorFromList);
-                namesakeIndex.add(i);
+                namesakes.add(actorFromList); // запоминаем однофамильца
+                namesakeIndex.add(i);         // добавляем его номер в списке actorList
             }
         }
     }
 
     public void printNamesakes() {
         for (int i = 0; i < namesakes.size(); i++) {
-            System.out.println((i+1) + " " + namesakes.get(i));
+            System.out.println((i+1) + ". " + namesakes.get(i));
         }
     }
 }

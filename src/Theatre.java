@@ -5,9 +5,7 @@ public class Theatre {
         Actor actor1 = new Actor(new Person("Федор Шаляпин", Gender.MALE), 197);
         Actor actor2 = new Actor(new Person("Иван Дмитриевский", Gender.MALE), 184);
         Actor actor3 = new Actor(new Person("Софья Гославская", Gender.FEMALE),165);
-        Actor actor4 = new Actor(new Person("Прохор Шаляпин", Gender.MALE), 165);
-        Actor actor5 = new Actor(new Person("Архип Шаляпин", Gender.MALE), 178);
-
+        
         Director dyagilev  = new Director(new Person("Сергей Дягилев", Gender.MALE),74);
         Director meyerhold = new Director(new Person("Всеволод Мейерхольд ", Gender.MALE), 56);
         
@@ -21,41 +19,30 @@ public class Theatre {
         MusicalShow musicalShow = new MusicalShow(new Show("Фауст",120,dyagilev), musicAuthor, libretto.getLibrettoText());
         Ballet      ballet      = new Ballet(musicalShow,choreographer);
         Opera       opera       = new Opera(musicalShow, 12); 
-
-        spectacle.addNewActor(actor1);
-        spectacle.addNewActor(actor4);
-        spectacle.addNewActor(actor5);
-
-        spectacle.printActorList();
-
-        //spectacle.replacementOfActor("Гагарин", actor3);
-        //spectacle.replacementOfActor("Шаляпин", actor3);
-        spectacle.replacementOfActor("Шаляпин", actor1);
-        spectacle.printActorList();
         
-        // spectacle.addNewActor(actor1);
-        // spectacle.addNewActor(actor2);
+        spectacle.addNewActor(actor1);
+        spectacle.addNewActor(actor2);
 
-        // ballet.addNewActor(actor2);
-        // ballet.addNewActor(actor3);
+        ballet.addNewActor(actor2);
+        ballet.addNewActor(actor3);
 
-        // opera.addNewActor(actor1);
-        // opera.addNewActor(actor3);
+        opera.addNewActor(actor1);
+        opera.addNewActor(actor3);
 
-        // spectacle.printActorList();
+        spectacle.printActorList();
 
-        // ballet.printActorList();
+        ballet.printActorList();
 
-        // opera.printActorList();
+        opera.printActorList();
 
-        // //        ballet.replacementOfActor("Дмитриевский", actor1); // замена актера 
+        ballet.replacementOfActor("Дмитриевский", actor1); // замена актера 
 
-        // ballet.printActorList();
+        ballet.printActorList();
 
-        // // opera.replacementOfActor("Гагарин", actor2); // попытка замены не участвующего в постановке актера 
-        // // opera.printActorList();
+        opera.replacementOfActor("Гагарин", actor2); // попытка замены не участвующего в постановке актера 
+        opera.printActorList();
 
-        // ballet.printLibrettoText();
-        // opera.printLibrettoText();
+        ballet.printLibrettoText();
+        opera.printLibrettoText();
     }
 }

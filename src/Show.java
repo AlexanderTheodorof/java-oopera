@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Scanner;
 
 class Show  {
@@ -68,12 +67,9 @@ class Show  {
     }
 
     public void replacementOfActor(String surnameOfReplaced, Actor actor) {
-         if (actorList.contains(actor)) {
-            System.out.println("Актер, которым вы хотите заменить, уже участвует в "
-                               + type + " '" + title + "'.");
-         } else {
-             Namesakes namesakes = new Namesakes(surnameOfReplaced, actorList);
-             switch (namesakes.getSizeOfNamesakesList()) {
+        if (!actorList.contains(actor)) {
+            Namesakes namesakes = new Namesakes(surnameOfReplaced, actorList);
+            switch (namesakes.getSizeOfNamesakesList()) {
                 case 0:
                     System.out.println("Актера с такой фамилией нет в списке");
                     break;
@@ -88,16 +84,24 @@ class Show  {
                     namesakes.printNamesakes();
                     System.out.print("Введите номер актера, которого хотите заменить: ");
 
-                    Scanner scanner     = new Scanner(System.in);
-                    String  userInput   = scanner.nextLine();
-                    
-                    userInput = userInput.strip();
-                    
-                    int     userIndex   = Integer.parseInt(userInput);
-                    actorList.set(namesakes.getNamesakeIndex(userIndex - 1), actor);
-                    System.out.println("Актер " + namesakes.getNamesake(userIndex - 1) + " был заменен на " + actor);
-                    break;
-             }
+                    Scanner scanner = new Scanner(System.in);
+                    while(true) {
+                        String userInput = scanner.nextLine();
+                        userInput = userInput.strip();
+                        int userIndex = Integer.parseInt(userInput);
+                        if (userIndex > 0 && userIndex <= namesakes.getSizeOfNamesakesList()) {
+                            actorList.set(namesakes.getNamesakeIndex(userIndex - 1), actor);
+                            System.out.println("Актер " + namesakes.getNamesake(userIndex - 1) + " был заменен на " + actor);
+                            break;
+                        } else {
+                            System.out.println("Вы указали неправильный номер");
+                            namesakes.printNamesakes();
+                        }
+                    }
+            } 
+        } else {
+            System.out.println("Актер, которым вы хотите заменить, уже участвует в "
+                                + type + " '" + title + "'.");
          }
     }
 }
