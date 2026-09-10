@@ -26,27 +26,18 @@ class Actor extends Person {
         if (this.getClass() != obj.getClass()) return false;
 
         Actor   anotherActor  = (Actor) obj;
-        boolean isEqName      = Objects.equals(this.name, anotherActor.name);
-        boolean isEqSurname   = Objects.equals(this.surname, anotherActor.surname);
+        boolean isEqPerson    = super.equals(anotherActor);
         boolean isEqHeight    = this.height  == anotherActor.height;
 
-        return isEqName && isEqSurname && isEqHeight; 
+        return isEqPerson && isEqHeight; 
     }
 
     @Override
     public int hashCode() {
         int result = 17;
-        if (this.name != null) {
-            result += name.hashCode();
-        }
+        result += super.hashCode();
         result *= 31;
-        if (this.surname != null) {
-            result += surname.hashCode();
-        }
-        result *= 7;
-        if (height != 0) {
-            result += height;
-        }
+        result += height; 
         return result;
     }
 }

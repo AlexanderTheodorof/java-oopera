@@ -4,7 +4,7 @@ public class Theatre {
 
         Actor actor1 = new Actor(new Person("Федор Шаляпин", Gender.MALE), 197);
         Actor actor2 = new Actor(new Person("Иван Дмитриевский", Gender.MALE), 184);
-        Actor actor3 = new Actor(new Person("Софья Гославская", Gender.FEMALE),165); 
+        Actor actor3 = new Actor(new Person("Софья Гославская", Gender.FEMALE),165);
 
         Director dyagilev  = new Director(new Person("Сергей Дягилев", Gender.MALE),74);
         Director meyerhold = new Director(new Person("Всеволод Мейерхольд ", Gender.MALE), 56);
@@ -12,36 +12,54 @@ public class Theatre {
         Person choreographer = new Person("Вацлав Нижинский", Gender.MALE);
         Person musicAuthor   = new Person("Клара Шуман", Gender.FEMALE);
 
-        Libretto libretto = new Libretto(); //загружаем либретто 
+        System.out.println(actor1);
+        System.out.println(actor1.hashCode());
+        System.out.println(actor2);
+        System.out.println(actor2.hashCode());
+        System.out.println(actor3);
+        System.out.println(actor3.hashCode());
 
-        Show        spectacle   = new Show("Сон в летнюю ночь",120, meyerhold);
-        MusicalShow musicalShow = new MusicalShow(new Show("Фауст",120,dyagilev), musicAuthor, libretto.getLibrettoText());
-        Ballet      ballet      = new Ballet(musicalShow,choreographer);
-        Opera       opera       = new Opera(musicalShow, 12); 
+        System.out.println(dyagilev);
+        System.out.println(dyagilev.hashCode());
+        System.out.println(meyerhold);
+        System.out.println(meyerhold.hashCode());
 
-        spectacle.addNewActor(actor1);
-        spectacle.addNewActor(actor2);
+        System.out.println(choreographer);
+        System.out.println(choreographer.hashCode());
+        System.out.println(musicAuthor);
+        System.out.println(musicAuthor.hashCode());
 
-        ballet.addNewActor(actor2);
-        ballet.addNewActor(actor3);
+        System.out.println(actor1.equals(person1));
+        // Libretto libretto = new Libretto(); //загружаем либретто 
 
-        opera.addNewActor(actor1);
-        opera.addNewActor(actor3);
+        // Show        spectacle   = new Show("Сон в летнюю ночь",120, meyerhold);
+        // MusicalShow musicalShow = new MusicalShow(new Show("Фауст",120,dyagilev), musicAuthor, libretto.getLibrettoText());
+        // Ballet      ballet      = new Ballet(musicalShow,choreographer);
+        // Opera       opera       = new Opera(musicalShow, 12); 
 
-        spectacle.printActorList();
+        // spectacle.addNewActor(actor1);
+        // spectacle.addNewActor(actor2);
 
-        ballet.printActorList();
+        // ballet.addNewActor(actor2);
+        // ballet.addNewActor(actor3);
 
-        opera.printActorList();
+        // opera.addNewActor(actor1);
+        // opera.addNewActor(actor3);
 
-        ballet.replacementOfActor("Дмитриевский", actor1); // замена актера 
+        // spectacle.printActorList();
 
-        ballet.printActorList();
+        // ballet.printActorList();
 
-        opera.replacementOfActor("Гагарин", actor2); // попытка замены не участвующего в постановке актера 
-        opera.printActorList();
+        // opera.printActorList();
 
-        ballet.printLibrettoText();
-        opera.printLibrettoText();
+        // ballet.replacementOfActor("Дмитриевский", actor1); // замена актера 
+
+        // ballet.printActorList();
+
+        // opera.replacementOfActor("Гагарин", actor2); // попытка замены не участвующего в постановке актера 
+        // opera.printActorList();
+
+        // ballet.printLibrettoText();
+        // opera.printLibrettoText();
     }
 }

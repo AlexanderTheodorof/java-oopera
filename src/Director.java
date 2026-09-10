@@ -9,7 +9,15 @@ class Director extends Person {
 
     @Override
     public String toString() {
-        String objectDescription = String.format("Режиссер: %s %s", name, surname);
-        return "Режиссер: " + name + " " + surname;  
+        return "Режиссер: " + super.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        result += super.hashCode();
+        result *= 31;
+        result += numberOfShows;
+        return result;
     }
 }

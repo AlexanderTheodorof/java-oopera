@@ -1,9 +1,9 @@
 import java.util.HashMap;
 
 class Show  {
-    protected String                    title;
-    protected int                    duration;
-    protected Director               director;
+    protected String   title;
+    protected int      duration;
+    protected Director director;
     protected final HashMap<String,Actor> actorList = new HashMap<>();
 
     Show(String title, int duration, Director director) {

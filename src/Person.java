@@ -41,4 +41,29 @@ class Person {
             name + " " + surname;
         return objectDescription; 
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+        
+        Person  anotherPerson = (Person) obj;
+        boolean isEqName      = this.name.equals(anotherPerson.name);
+        boolean isEqSurname   = this.surname.equals(anotherPerson.surname);
+        boolean isEqGender    = this.gender.equals(anotherPerson.gender);
+
+        return isEqName && isEqSurname && isEqGender; 
+     }
+
+    @Override
+    public int hashCode() {
+        int result = 17;
+        if (this.name != null) result += name.hashCode();
+        result *= 31;
+        if (this.surname != null) result += surname.hashCode();
+        result *= 7;
+        if (this.gender != null) result += gender.hashCode();
+        return result; 
+    }
 }
